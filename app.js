@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-// curl -X POST -F "image=@public/shkya2.jpg" http://localhost:3000/setImage
+// curl -v -H "Content-Type: application/octet-stream" --data-binary @<path_to_valid_image.jpg> http://localhost:3000/setImage
 app.use("/setImage", setImageRouter);
 app.use("/getImage", getImageRouter);
 
